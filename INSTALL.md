@@ -16,7 +16,7 @@ Clone the repository and navigate to the project directory:
 
 ```bash
 git clone https://github.com/irfanghat/databricks-container-image-proxy.git
-cd dbx-poc/databricks_container_image_proxy
+cd databricks_container_image_proxy
 ```
 
 Create and activate a virtual environment:
@@ -29,7 +29,7 @@ source .venv/bin/activate
 Install the required dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ## Configuration
@@ -54,5 +54,5 @@ export DATABRICKS_VOLUME=/Volumes/<catalog>/<schema>/<volume>
 Check that the CLI is configured correctly by listing the contents of your volume:
 
 ```bash
-python dcip.py list
+dcip --help
 ```

@@ -57,7 +57,7 @@ Saves, compresses, and uploads the image to your configured Volume.
 ### Pull an image
 
 ```bash
-python dcip.py pull nginx:alpine
+dcip pull nginx:alpine
 ```
 
 Downloads, decompresses, and loads the image into your local Docker daemon.
@@ -65,15 +65,15 @@ Downloads, decompresses, and loads the image into your local Docker daemon.
 ### List images in the registry
 
 ```bash
-python dcip.py list
+dcip list
 ```
 
 Prints a table of every image name, tag, size, and last-modified time stored in the Volume.
 
-### Run an image (pulling automatically if needed)
+### Run an image (Pulling automatically if needed)
 
 ```bash
-python dcip.py run nginx:alpine --name my-nginx -p 8080:80
+dcip run nginx:alpine --name my-nginx -p 8080:80
 ```
 
 > ⚠️ **Image reference must come immediately after `run`, before any Docker flags.** Since DBRX Registry forwards arbitrary `docker run` flags transparently, the image has to be bound first so flags like `-p`, `-e`, `--name`, and `-d` are correctly passed through to Docker, not misread as the image name.
@@ -82,7 +82,7 @@ python dcip.py run nginx:alpine --name my-nginx -p 8080:80
 # -------------------------------------------------
 # Detached, with env vars and a container name
 # -------------------------------------------------
-python dcip.py run my-app:v1.2.0 -d -p 8080:80 --name production-app -e NODE_ENV=production
+dcip run my-app:v1.2.0 -d -p 8080:80 --name production-app -e NODE_ENV=production
 ```
 
 
