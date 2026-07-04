@@ -32,6 +32,12 @@ Install the required dependencies:
 pip install -e .
 ```
 
+## Install directly from GitHub
+
+```bash
+pip install dcip@git+https://github.com/irfanghat/databricks-container-image-proxy.git
+```
+
 ## Configuration
 
 Create a `.env` file in the root directory (`~/dbx-poc/databricks_container_image_proxy/.env`) with the following variables:
