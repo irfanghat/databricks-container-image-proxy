@@ -2,7 +2,7 @@
 
 Follow these steps to set up the **Databricks Container Image Proxy (DCIP)** utility.
 
-## 1. Prerequisites
+## Prerequisites
 
 - **Python 3.9+**: Ensure Python is installed on your system.
 - **Docker**: The Docker daemon must be installed and running locally.
@@ -10,12 +10,12 @@ Follow these steps to set up the **Databricks Container Image Proxy (DCIP)** uti
 - **Unity Catalog Volume**: A target Volume (e.g., `/Volumes/main/default/my_images`) where you have read/write permissions.
 - **Databricks Personal Access Token (PAT)**: A token with permissions to access the Files API for the target Volume.
 
-## 2. Setup
+## Setup
 
 Clone the repository and navigate to the project directory:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/irfanghat/databricks-container-image-proxy.git
 cd dbx-poc/databricks_container_image_proxy
 ```
 
@@ -32,7 +32,7 @@ Install the required dependencies:
 pip install -r requirements.txt
 ```
 
-## 3. Configuration
+## Configuration
 
 Create a `.env` file in the root directory (`~/dbx-poc/databricks_container_image_proxy/.env`) with the following variables:
 
@@ -42,7 +42,14 @@ DATABRICKS_TOKEN=dapi************************
 DATABRICKS_VOLUME=/Volumes/<catalog>/<schema>/<volume>
 ```
 
-## 4. Verify Installation
+Alternatively, you can **export** the following variables:
+```sh
+export DATABRICKS_HOST=https://<your-workspace-url>.databricks.com
+export DATABRICKS_TOKEN=dapi************************
+export DATABRICKS_VOLUME=/Volumes/<catalog>/<schema>/<volume>
+```
+
+## Verify Installation
 
 Check that the CLI is configured correctly by listing the contents of your volume:
 

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dcip"
+version = "0.1.0"
+description = "Docker image shipping backed by Databricks Volumes."
+authors = [
+    { name = "Irfan Ghat", email = "irfanghat@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "typer[all]",
+    "httpx",
+    "pydantic-settings",
+    "python-dotenv",
+    "rich",
+]
+
+[project.scripts]
+dcip = "cli.commands:app"
+
+[tool.setuptools]
+packages = ["cli", "databricks", "docker", "terminal", "parsing", "compression"]
+py-modules = ["settings", "dcip"]

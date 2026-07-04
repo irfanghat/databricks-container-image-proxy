@@ -49,7 +49,7 @@ Please refer to the INSTALL.md file for detailed setup instructions and environm
 ### Push a local image
 
 ```bash
-python dcip.py push nginx:alpine
+dcip push nginx:alpine
 ```
 
 Saves, compresses, and uploads the image to your configured Volume.
