@@ -22,7 +22,7 @@ This project is intentionally simple, it doesn't try to reimplement the **OCI Di
 
 ## How it works
 
-[Diagram]()
+![Diagram](https://github.com/irfanghat/databricks-container-image-proxy/blob/master/docs/how_it_works.png?raw=true)
 
 - **Push**: `docker save` -> gzip-compress with a live progress bar and SHA-256 checksum → stream directly to the Volume via `PUT`.
 - **Pull**: stream the object back with `GET` -> decompress -> `docker load` into your local daemon.
