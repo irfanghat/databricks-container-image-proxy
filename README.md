@@ -1,4 +1,4 @@
-# DBRX Registry
+# Databricks Container Image Proxy (DCIP)
 
 A **serverless Docker image registry** backed by **Databricks Unity Catalog Volumes**. No registry server, and **no extra infrastructure**.
 
