@@ -1,0 +1,8 @@
+fastapi 
+uvicorn 
+requests 
+python-multipart
+dotenv
+httpx
+typer
+pydantic_settings
