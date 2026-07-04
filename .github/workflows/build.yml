@@ -19,13 +19,17 @@ jobs:
       - name: Install build tools
         run: |
           python -m pip install --upgrade pip
-          pip install build twine
+          pip install build twine pyinstaller
+          pip install .
 
       - name: Build Source Distribution and Wheel
         run: python -m build
 
       - name: Check package integrity
         run: twine check dist/*
+
+      - name: Build Standalone Binary (Linux x86_64)
+        run: pyinstaller --onefile --name dcip-linux-x86_64 dcip.py
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
